@@ -10,8 +10,17 @@ namespace PrimeirUltimoChar
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Escreva uma palavra.");
-            Console.ReadLine();
+            Console.WriteLine("Escreva uma palavra qualquer:");
+
+            var text = Console.ReadLine();
+
+            Console.WriteLine($"O primeiro caracter da palavra é:  {text[0]}");
+
+
+
+            Console.WriteLine($"O último caracter da palavra é: {text[text.Length - 1]}");
+
+            Console.ReadKey();
         }
     }
 }
