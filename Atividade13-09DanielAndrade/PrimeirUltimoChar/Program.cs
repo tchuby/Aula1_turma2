@@ -14,11 +14,9 @@ namespace PrimeirUltimoChar
 
             var text = Console.ReadLine();
 
-            Console.WriteLine($"O primeiro caracter da palavra é:  {text[0]}");
-
-
-
-            Console.WriteLine($"O último caracter da palavra é: {text[text.Length - 1]}");
+            Console.WriteLine($"O primeiro caracter da palavra é:  {text[0]} e o último: {text[text.Length - 1]}");
+                        
+            Console.WriteLine($"");
 
             Console.ReadKey();
         }
