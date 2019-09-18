@@ -22,7 +22,9 @@ namespace AcessandoInformacao
             Console.WriteLine("Escolha uma das opções do menu:");
             Console.WriteLine("1 - Calculo de área");
             Console.WriteLine("2 - Mostrar Animação");
-            Console.WriteLine("3 - Sair do sistema");
+            Console.WriteLine("3 - Mostrar Lista de Cervejas");
+            Console.WriteLine("4 - Mostrar Lista de Carros");
+            Console.WriteLine("5 - Sair do sistema");
 
             var menuEscolhido = int.Parse(Console.ReadLine());
 
@@ -36,11 +38,25 @@ namespace AcessandoInformacao
                     } break;
                 case 2:
                     {
-                        UmProjeto.Program.DesenharArvore();
+                        ImprimirArvore.Arvore();
                         MenuSistema();
 
                     } break;
                 case 3:
+                    {
+                        Listas.ListaDeCervejas();
+                        MenuSistema();
+
+                    }
+                    break;
+                case 4:
+                    {
+                        Listas.ListaDeCarros();
+                        MenuSistema();
+
+                    }
+                    break;
+                case 5:
                     {
 
                         Console.WriteLine("Saindo");

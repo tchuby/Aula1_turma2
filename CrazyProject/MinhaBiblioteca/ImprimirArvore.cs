@@ -34,15 +34,15 @@ namespace MinhaBiblioteca
             Console.WriteLine("  8888 88 888_______\\   | | //   888 888 8888 888     ");
             Console.WriteLine("   88 88888 88 88----\\  | |//__8888888 8888 888 8 88  ");
             Console.WriteLine("      888 8           \\ |    ------88888888 88888     ");
-            Console.WriteLine("                       |     |        88  888888       ");
-            Console.WriteLine("                       |     |                         ");
-            Console.WriteLine("                       |     |                         ");
-            Console.WriteLine("                       |     |                         ");
-            Console.WriteLine("                       |     |                         ");
-            Console.WriteLine("                       |     |                         ");
-            Console.WriteLine("                      /       |                        ");
-            Console.WriteLine("                     /         |                       ");
-            Console.WriteLine("--------------------/           |----------------------");
+            Console.WriteLine("                       |    /         88  888888       ");
+            Console.WriteLine("                       |   |                           ");
+            Console.WriteLine("                       |   |                           ");
+            Console.WriteLine("                       |   |                           ");
+            Console.WriteLine("                       |   |                           ");
+            Console.WriteLine("                       |   |                           ");
+            Console.WriteLine("                      /     |                          ");
+            Console.WriteLine("                     /        |                        ");
+            Console.WriteLine("--------------------/           |MM--------------------");
 
             return ""; 
 

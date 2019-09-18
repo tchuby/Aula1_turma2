@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcessandoDllDoAmiguinho", "AcessandoDllDoAmiguinho\AcessandoDllDoAmiguinho.csproj", "{43E521DE-7AED-440B-A020-5651F7513B6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43E521DE-7AED-440B-A020-5651F7513B6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43E521DE-7AED-440B-A020-5651F7513B6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43E521DE-7AED-440B-A020-5651F7513B6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43E521DE-7AED-440B-A020-5651F7513B6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E3613CF-95C8-4EE2-945D-1A26131D5774}
+	EndGlobalSection
+EndGlobal
