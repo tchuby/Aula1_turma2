@@ -4,23 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UmProjeto
+namespace MinhaBiblioteca
 {
-    public class Program
+    public class ImprimirArvore
     {
-        
-        static void Main(string[] args)
-        {
-
-            DesenharArvore();
-            Console.ReadKey();
-                                                               
-        }
-
         /// <summary>
-        /// Metodo que desenha uma árvore no console
+        /// Metodo para imprimir a arvore
         /// </summary>
-        public static void DesenharArvore()
+        /// <returns></returns>
+        public static string Arvore()
         {
 
             Console.WriteLine("                 888                                   ");
@@ -51,57 +43,11 @@ namespace UmProjeto
             Console.WriteLine("                      /       |                        ");
             Console.WriteLine("                     /         |                       ");
             Console.WriteLine("--------------------/           |----------------------");
-            
+
+            return ""; 
 
         }
-
-        /// <summary>
-        /// Metodo que calcula a área do quadrado
-        /// </summary>
-        static public void AreaDoQuadrado()
-        {
-
-            Console.WriteLine("Especifique o lado do quadrado para saber sua área:");
-            double ladoDoQuadrado = double.Parse(Console.ReadLine());
-            double areaDoQuadrado = ladoDoQuadrado * ladoDoQuadrado;
-            Console.WriteLine($"A aréa do quadrado é de: {areaDoQuadrado}");
-           
-        }
-
-        /// <summary>
-        /// Metodo que lista marcas de cervejarias
-        /// </summary>
-        static public void ListaDeCervejas()
-        {
-
-            //Goose Island, Hoegaarden, Leffe, Norteña, Walls
-
-            var cervejas = new List<string>();
-
-            cervejas.Add("Goose Island");
-            cervejas.Add("Hoegaarden");
-            cervejas.Add("Leffe");
-            cervejas.Add("Norteña");
-            cervejas.Add("Walls");
-
-        }
-
-        /// <summary>
-        /// Metodo que lista marcas de fabricantes de carros
-        /// </summary>
-        static public void ListaDeCarros()
-        {
-
-            var marcaDeCarro = new List<string>();
-
-            marcaDeCarro.Add("Gurgel");
-            marcaDeCarro.Add("Puma");
-            marcaDeCarro.Add("Santa Matilde");
-            marcaDeCarro.Add("Miura");
-            marcaDeCarro.Add("Romi-Isetta");
-            marcaDeCarro.Add("Willys-Overland");
-
-        }
-
+        
+        
     }
 }
