@@ -9,7 +9,7 @@ namespace CadastroDePessoas
 {
     class Program
     {
-
+        //Variável global
         static List<Pessoa> dadosPessoais = new List<Pessoa>();
         
 

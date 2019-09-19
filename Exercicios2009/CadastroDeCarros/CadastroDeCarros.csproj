@@ -50,5 +50,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CadastroDePessoas\CadastroDePessoas.csproj">
+      <Project>{21696DEC-AC61-4E86-A932-8646B0C82D98}</Project>
+      <Name>CadastroDePessoas</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
