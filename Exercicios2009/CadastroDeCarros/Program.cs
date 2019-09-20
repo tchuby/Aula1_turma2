@@ -13,7 +13,7 @@ namespace CadastroDeCarros
         static void Main(string[] args)
         {
 
-            List<Pessoa> pessoas = new List<Pessoa>();
+            /*List<Pessoa> pessoas = new List<Pessoa>();
 
             Pessoa p1 = new Pessoa();
             p1.Nome = "Gabriel";
@@ -77,7 +77,7 @@ namespace CadastroDeCarros
                 }
             }
 
-            Console.ReadLine();
+            Console.ReadLine();*/
 
         }
        
