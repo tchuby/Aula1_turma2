@@ -9,43 +9,42 @@ namespace LocacaoBiblioteca.Controller
 {
     public class LivrosController
     {
-        private int IdContador = 1;
-        
+        private LocacaoContext contextDB = new LocacaoContext(); 
+
         public LivrosController()
         {
-            ListaDeLivros = new List<Livro>();
-
-            ListaDeLivros.Add(new Livro()
-            {
-                Nome = "Meu primeiro livro.",
-                Id = IdContador++
-
-                
-            });
-            ListaDeLivros.Add(new Livro()
-            {
-                Nome = "Meu segundo livro.",
-                Id = IdContador++
-               
-            });           
+            
 
         }
-        private List<Livro> ListaDeLivros { get; set; }
-
+        
         /// <summary>
         /// Metodo que adiciona o livro em nossa lista já "insraniada" cria dentro do construtor
         /// </summary>
         /// <param name="parametroLivro">Informanções do livro que vamos adicionar</param>
         public void AdicionarLivro(Livro parametroLivro)
         {
-            parametroLivro.Id = IdContador++;
             //Adiciona o livro a nossa lista
-            ListaDeLivros.Add(parametroLivro);
+            parametroLivro.Id = contextDB.IdContadorLivros++;        
             
+            contextDB.ListaDeLivros.Add(parametroLivro);
+
         }
         public List<Livro> RetornaListaDeLivros()
         {
-            return ListaDeLivros;
+            return contextDB.ListaDeLivros.Where(x => x.Ativo).ToList<Livro>();
+        }
+
+        /// <summary>
+        /// Metodo para desativar o registro de livro pelo id
+        /// </summary>
+        /// <param name="identificaID">Id do livro a desativar</param>
+        public void RemoverLivroPorID(int identificaID)
+        {
+            //FirstOrDefault retorna null em caso de não encontrar um registro
+           var livro = contextDB.ListaDeLivros.FirstOrDefault(x => x.Id == identificaID);
+            //tratamento do valor quando ele não encontrr um livro pelo id
+            if (livro != null)
+                livro.Ativo = false;
         }
             
 

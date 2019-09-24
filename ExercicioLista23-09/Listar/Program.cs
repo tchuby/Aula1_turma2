@@ -3,21 +3,64 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ListandoPessoas2.Controller;
+using ListandoPessoas2.Model; 
 
-namespace Listar
+namespace ListandoPessoas2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var listaDePessoas = new List<Pessoa>();
+            //Aqui carregamos nossa caixa de ferramentas de pessoas
+            //podemos agora listar e demais funcionalidades
+            PessoaController pessoaController = 
+                //Nesta parte ao iniciar em memorisa
+                //Iniciamos o construtor
+                new PessoaController();
+
+            pessoaController.ListaDePessoasPublica
+                .ForEach(i => MostraInformacoes(i));
+
+            MostraIdentificador("Lista_Ordenada_Por_Nome");
+
+            pessoaController
+                .GetPessoasOrdenadaAsc()
+                .ForEach(i => MostraInformacoes(i));
+
+            MostraIdentificador("Lista_Ordenada_Por_DataDecrescente");
+            
+            pessoaController
+                .GetPessoasOrdenadaDescPelaDataNascimento()
+                .ForEach(i => MostraInformacoes(i));
+
+            MostraIdentificador("Lista_Ordenada_Por_dindim");
+
+            Console.WriteLine("Escreva o valor filtrado:");
+
+            double valorFiltrar = double.Parse(Console.ReadLine());
+
+            pessoaController.GetPessoasComMaisPilasNaCarteira(valorFiltrar).ForEach(i => MostraInformacoes(i));
+
+            MostraIdentificador("Lista_Ordenada_Por_Maiores_DE_18");
+
+            pessoaController.GetPessoasComIdadeMaiorA().ForEach(i => MostraInformacoes(i));
+
+            MostraIdentificador("Lista_Ordenada_Por_Menores_De_16");
+
+            pessoaController.GetPessoasComIdadeMenorQue().ForEach(i => MostraInformacoes(i));
+
+            Console.ReadKey();
+            #region esconder meu código 
+
+            /*var listaDePessoas = new List<Pessoa>();
 
             listaDePessoas.Add(new Pessoa()
             {
 
                 Id = 0,
                 Nome = "Spears",
-                Natal = DateTime.Parse("07/11/2004"),
+                DataNascimento = DateTime.Parse("07/11/2004"),
                 Carteira = 846.96
 
             });
@@ -27,7 +70,7 @@ namespace Listar
 
                 Id = 1,
                 Nome = "Swanson",
-                Natal = DateTime.Parse("20/06/2003"),
+                DataNascimento = DateTime.Parse("20/06/2003"),
                 Carteira = 233.09
 
             });
@@ -37,7 +80,7 @@ namespace Listar
 
                 Id = 2,
                 Nome = "Gay",
-                Natal = DateTime.Parse("03/12/2001"),
+                DataNascimento = DateTime.Parse("03/12/2001"),
                 Carteira = 911.92
 
             });
@@ -47,7 +90,7 @@ namespace Listar
 
                 Id = 3,
                 Nome = "Gregory",
-                Natal = DateTime.Parse("02/01/2000"),
+                DataNascimento = DateTime.Parse("02/01/2000"),
                 Carteira = 469.01
 
             });
@@ -57,7 +100,7 @@ namespace Listar
 
                 Id = 4,
                 Nome = "Olson",
-                Natal = DateTime.Parse("18/07/2001"),
+                DataNascimento = DateTime.Parse("18/07/2001"),
                 Carteira = 261.90
 
             });
@@ -67,7 +110,7 @@ namespace Listar
 
                 Id = 5,
                 Nome = "Garza",
-                Natal = DateTime.Parse("01/04/2000"),
+                DataNascimento = DateTime.Parse("01/04/2000"),
                 Carteira = 360.41
 
             });
@@ -77,7 +120,7 @@ namespace Listar
 
                 Id = 6,
                 Nome = "Sweet",
-                Natal = DateTime.Parse("12/03/2003"),
+                DataNascimento = DateTime.Parse("12/03/2003"),
                 Carteira = 312.76
 
             });
@@ -87,7 +130,7 @@ namespace Listar
 
                 Id = 7,
                 Nome = "Cline",
-                Natal = DateTime.Parse("26/03/2002"),
+                DataNascimento = DateTime.Parse("26/03/2002"),
                 Carteira = 484.51
 
             });
@@ -97,7 +140,7 @@ namespace Listar
 
                 Id = 8,
                 Nome = "Oliver",
-                Natal = DateTime.Parse("05/07/2004"),
+                DataNascimento = DateTime.Parse("05/07/2004"),
                 Carteira = 513.76
 
             });
@@ -107,7 +150,7 @@ namespace Listar
 
                 Id = 9,
                 Nome = "Vang",
-                Natal = DateTime.Parse("10/07/2000"),
+                DataNascimento = DateTime.Parse("10/07/2000"),
                 Carteira = 271.05
 
             });
@@ -117,7 +160,7 @@ namespace Listar
 
                 Id = 10,
                 Nome = "Maddox",
-                Natal = DateTime.Parse("29/05/2004"),
+                DataNascimento = DateTime.Parse("29/05/2004"),
                 Carteira = 783.97
 
             });
@@ -127,7 +170,7 @@ namespace Listar
 
                 Id = 11,
                 Nome = "Garrett",
-                Natal = DateTime.Parse("03/06/2006"),
+                DataNascimento = DateTime.Parse("03/06/2006"),
                 Carteira = 154.11
 
             });
@@ -137,7 +180,7 @@ namespace Listar
 
                 Id = 12,
                 Nome = "Mcintosh",
-                Natal = DateTime.Parse("06/07/2006"),
+                DataNascimento = DateTime.Parse("06/07/2006"),
                 Carteira = 902.80
 
             });
@@ -147,7 +190,7 @@ namespace Listar
 
                 Id = 13,
                 Nome = "Yang",
-                Natal = DateTime.Parse("29/04/2005"),
+                DataNascimento = DateTime.Parse("29/04/2005"),
                 Carteira = 550.48
 
             });
@@ -157,7 +200,7 @@ namespace Listar
 
                 Id = 14,
                 Nome = "Hendricks",
-                Natal = DateTime.Parse("05/09/2003"),
+                DataNascimento = DateTime.Parse("05/09/2003"),
                 Carteira = 410.56
 
             });
@@ -167,7 +210,7 @@ namespace Listar
 
                 Id = 15,
                 Nome = "Cain",
-                Natal = DateTime.Parse("12/01/2002"),
+                DataNascimento = DateTime.Parse("12/01/2002"),
                 Carteira = 221.13
 
             });
@@ -177,7 +220,7 @@ namespace Listar
 
                 Id = 16,
                 Nome = "Blackburn",
-                Natal = DateTime.Parse("10/05/2000"),
+                DataNascimento = DateTime.Parse("10/05/2000"),
                 Carteira = 135.67
 
             });
@@ -187,7 +230,7 @@ namespace Listar
 
                 Id = 17,
                 Nome = "Howe",
-                Natal = DateTime.Parse("27/09/2005"),
+                DataNascimento = DateTime.Parse("27/09/2005"),
                 Carteira = 360.14
 
             });
@@ -197,7 +240,7 @@ namespace Listar
 
                 Id = 18,
                 Nome = "Pratt",
-                Natal = DateTime.Parse("18/09/2000"),
+                DataNascimento = DateTime.Parse("18/09/2000"),
                 Carteira = 991.83
 
             });
@@ -207,7 +250,7 @@ namespace Listar
 
                 Id = 19,
                 Nome = "Sherman",
-                Natal = DateTime.Parse("20/02/2003"),
+                DataNascimento = DateTime.Parse("20/02/2003"),
                 Carteira = 667.00
 
 
@@ -220,7 +263,7 @@ namespace Listar
 
             Console.WriteLine("Por Data de Nascimento:\r\n");
 
-            listaDePessoas.OrderByDescending(x => x.Natal).ToList<Pessoa>().ForEach(i => Console.WriteLine($"Nome: {i.Nome}, Natal: {i.Natal.ToString("dd/MM/yyyy")}"));
+            listaDePessoas.OrderByDescending(x => x.DataNascimento).ToList<Pessoa>().ForEach(i => Console.WriteLine($"Nome: {i.Nome}, Natal: {i.DataNascimento.ToString("dd/MM/yyyy")}"));
 
             Console.WriteLine("Questão 2__________________________\r\n");
 
@@ -231,9 +274,46 @@ namespace Listar
             Console.WriteLine("Questão 3__________________________\r\n");
 
 
-            Console.ReadKey();
+            Console.ReadKey();*/
+            #endregion
         }
-        public List
-        
+        /// <summary>
+        /// Metodo para mostrar a informação inicial de cada listagem
+        /// </summary>
+        /// <param name="nomeAcao"></param>
+        private static void MostraIdentificador(string nomeAcao)
+        {
+            Console.WriteLine(string.Format("---- {0,20} ----", nomeAcao));
+        }
+        /// <summary>
+        /// Metodo que mostrano console formatado nosso objeto
+        /// "Pessoa"
+        /// </summary>
+        /// <param name="pessoa">Objeto Pessoa que vamos apresentar</param>
+        private static void MostraInformacoes(Pessoa pessoa)
+        {
+            //Nosso template que apresenta as informações bonitinhas
+            //o format usa {0} essa expressão para colocar de acordo com a ordem informada dos paramentrs
+            string template = "Id {0,-3} Nome {1,-10} Nascimento {2,10} Carteira {3,5}";
+
+            //recebemos as informações bonitinhas com o string format
+                string textoFormatado = 
+                // string.format e usado para formatar as strings deixando nosso texto padrão apresentavel
+                string.Format(
+                    //nosso primeiro parametro é o template qu usamos
+                    template,
+                    //após informar o template, temos os parametros este metodo espera um array de parametros
+                    //Podemos passar muito parametros nele
+                    pessoa.Id,
+                    pessoa.Nome,
+                    pessoa.DataNascimento.ToShortDateString(),
+                    pessoa.Carteira.ToString("C2"));
+
+            Console.WriteLine(textoFormatado);
+                              
+
+        }
+
+
     }
 }
