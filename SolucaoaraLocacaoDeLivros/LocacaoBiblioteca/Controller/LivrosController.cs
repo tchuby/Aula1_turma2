@@ -18,7 +18,7 @@ namespace LocacaoBiblioteca.Controller
         }
         
         /// <summary>
-        /// Metodo que adiciona o livro em nossa lista já "insraniada" cria dentro do construtor
+        /// Metodo que adiciona o livro em nossa lista já "instanciada" cria dentro do construtor
         /// </summary>
         /// <param name="parametroLivro">Informanções do livro que vamos adicionar</param>
         public void AdicionarLivro(Livro parametroLivro)

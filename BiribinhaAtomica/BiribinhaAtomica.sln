@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestandoDllDoProf", "TestandoDllDoProf\TestandoDllDoProf.csproj", "{4CCCB28E-DA0D-47EC-A673-739DBFB13939}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CCCB28E-DA0D-47EC-A673-739DBFB13939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CCCB28E-DA0D-47EC-A673-739DBFB13939}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CCCB28E-DA0D-47EC-A673-739DBFB13939}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CCCB28E-DA0D-47EC-A673-739DBFB13939}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0064923D-5F04-4326-9E93-C9A3AD00BAB6}
+	EndGlobalSection
+EndGlobal

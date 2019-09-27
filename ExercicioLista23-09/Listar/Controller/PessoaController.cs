@@ -15,7 +15,8 @@ namespace ListandoPessoas2.Controller
         private List<Pessoa> ListaDePessoas { get; set; }
 
         /// <summary>
-        /// O metodo construtor ajuda a iniciar nossa classe para utilizarmos de aneira correta as informações internas, com isso podemos iniciar nossa lista de pessoas sem depender do usuario ou programador na parte da interface
+        /// O metodo construtor ajuda a iniciar nossa classe para utilizarmos de aneira correta as informações internas,
+        /// com isso podemos iniciar nossa lista de pessoas sem depender do usuario ou programador na parte da interface
         /// </summary>
         public PessoaController()
         {
