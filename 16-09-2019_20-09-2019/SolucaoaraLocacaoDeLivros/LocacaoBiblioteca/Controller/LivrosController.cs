@@ -9,16 +9,28 @@ namespace LocacaoBiblioteca.Controller
 {
     public class LivrosController
     {
-        private LocacaoContext contextDB = new LocacaoContext(); 
+        LocacaoContextDB contextDB = new LocacaoContextDB();
 
-        public LivrosController()
+        /// <summary>
+        /// Metodo que retorna a lista de livros Ativos
+        /// </summary>
+        /// <returns></returns>
+        public IQueryable<Livro> GetLivros()
         {
-            
+            return contextDB //Nosso Acesso ao banco de dados
+                .Livros //Nossa tabela
+                .Where //Filtro
+                (x => x.Ativo == true); //Condição do filtro
+        }
+
+        public bool AtualizarLivro(Livro item)
+        {
 
         }
-        
+
+                        
         /// <summary>
-        /// Metodo que adiciona o livro em nossa lista já "instanciada" cria dentro do construtor
+        /// Metodo que adiciona o livro em nossa lista 
         /// </summary>
         /// <param name="parametroLivro">Informanções do livro que vamos adicionar</param>
         public void AdicionarLivro(Livro parametroLivro)
@@ -29,11 +41,7 @@ namespace LocacaoBiblioteca.Controller
             contextDB.ListaDeLivros.Add(parametroLivro);
 
         }
-        public List<Livro> RetornaListaDeLivros()
-        {
-            return contextDB.ListaDeLivros.Where(x => x.Ativo).ToList<Livro>();
-        }
-
+        
         /// <summary>
         /// Metodo para desativar o registro de livro pelo id
         /// </summary>

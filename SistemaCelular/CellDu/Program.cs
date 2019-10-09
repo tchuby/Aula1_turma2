@@ -25,14 +25,33 @@ namespace CellDu
             {
                 Console.WriteLine("Esolha um menu");
                 Console.WriteLine("1 - Inserir Celular");
+                Console.WriteLine("2 - Atualizar celular");
+                Console.WriteLine("3 - Remover celular");
                 Console.WriteLine("0 - Sair");
                 // obtemos a opção escolhida pelo usuario
                 opcao = int.Parse(Console.ReadLine());
                 //switch nos ajuda com a opção
                 switch (opcao)
                 {
+                    // Caso for 1 ele insere um novo registro de celular
                     case 1:
                         InserirCelular();
+                        break;
+                        //Caso opção dois ele atualiza um celular existente 
+                    case 2:
+                        AtualizarCelular();
+                        break;
+                        //Caso opção 3 remove-se o celular
+                    case 3:
+                        RemoverCelular();
+                        break;
+                        //Caso opção 4 listar
+                    case 4:
+                        ListarCelular();
+                        break;
+                    case 0:
+                        //Informamos que estamos saindo do sistema
+                        Console.WriteLine("Saindo do sistema..");
                         break;
                     default:
                         Console.WriteLine("Opção inválida");
@@ -79,8 +98,88 @@ namespace CellDu
 
         }
         //Atualizar
+        /// <summary>
+        /// 
+        /// </summary>
+        public static void AtualizarCelular()
+        {
+            Console.WriteLine("--Atualizar Celular--");
+
+            ListarCelular();
+
+            //Informamos ao usuario que ele precisa que ele precisa colocar o id para realizar a alteração
+            Console.WriteLine("Informe o Id para alteração de registro:");
+            var celularId = int.Parse(Console.ReadLine());
+
+            //Obtemos do banco o item completo que será atualizado
+            var celular = celulares //Banco de dados
+                .GetCelulares() //Obtemos os celulares
+                .FirstOrDefault(x => x.Id == celularId);//regra para obter o celular
+            //verificmos se o celular existe
+            if (celular == null)
+            {
+                Console.WriteLine("Id informado inválido");
+                return;
+            }
+
+             
+            Console.WriteLine("Informe o Marca do Celular");
+            //Obtemos a marca do aparelho
+            celular.Marca = Console.ReadLine();
+
+            Console.WriteLine("Informe o Modelo");
+            //Obtemos o modelo do aparelho
+            celular.Modelo = Console.ReadLine();
+
+            Console.WriteLine("Informe o Valor do aparelho");
+            //Obtemos o preço do aparelho
+            celular.Preco = double.Parse(Console.ReadLine());
+
+            
+            var resultado = celulares //Nosa controller
+                .AtualizarCelular(celular);//Metodo que atualiza o celular
+            if (resultado)
+                Console.WriteLine("Celular atualizado com sucesso!");
+            else
+                Console.WriteLine("Erro ao atualizar o aparelho.");
+        }
         //Remover
+        /// <summary>
+        /// 
+        /// </summary>
+        public static void RemoverCelular()
+        {
+            Console.WriteLine("--Remover Celular--");
+
+            ListarCelular();
+
+            //Informamos ao usuario que ele precisa que ele precisa colocar o id para realizar a alteração
+            Console.WriteLine("Informe o Id para alteração de registro:");
+            var celularId = int.Parse(Console.ReadLine());
+
+            var resultado = celulares.RemoverCelular(celularId);
+
+            if (resultado)
+                Console.WriteLine("Celular removido com sucesso");
+            else
+                Console.WriteLine("Erro ao remover aparelho.");
+        }
         //Listar
+        /// <summary>
+        /// 
+        /// </summary>
+        public static void ListarCelular()
+        {
+            Console.WriteLine("--Listar Celular--");
+
+            //Listamos aqui para identificar o item que camos alterar
+            celulares.GetCelulares() //Obtemos a lista de celilares
+                .ToList<Celular>() // Convertemos para uma lista em memoria
+                .ForEach(x => //Laço de repetição para mostrar cada celular
+                //Mostramos no console nosso celular
+                 Console.WriteLine($"Id:{x.Id} Marca:{x.Marca} Modelo:{x.Modelo} Preço:{x.Preco}"));
+        }
+
 
     }
 }

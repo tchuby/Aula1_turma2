@@ -49,8 +49,7 @@ namespace CatalogoCelulares.Controller
                 return false;// Caso não tenha encontrado retornamos falso
             else
             { 
-                celular = item; // Encontrou e atualiza a informação
-                celular.DataAlteracao = DateTime.Now; //Atualizamos a datada alteração
+                item.DataAlteracao = DateTime.Now; //Atualizamos a datada alteração
             }
             contextDB.SaveChanges(); //Salvamos a informação no banco
 
