@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+ 
 namespace CatalogoCelulares.Model
 {
     public class CelularesContextDB ://definimos nossa herança

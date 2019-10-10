@@ -70,6 +70,7 @@ namespace CellDu
         public static void InserirCelular()
         {
             Console.WriteLine("--Inserir Celular--");
+
             Console.WriteLine("Informe o Marca do Celular");
 
             var marca = Console.ReadLine();

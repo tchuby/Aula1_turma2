@@ -5,10 +5,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3B0365EE-514A-43BB-A244-869F5A6E277D}</ProjectGuid>
+    <ProjectGuid>{4A29D4DB-8BE8-4474-86D3-490892B08E29}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>InterfaceBiblioteca</RootNamespace>
-    <AssemblyName>InterfaceBiblioteca</AssemblyName>
+    <RootNamespace>Nomation</RootNamespace>
+    <AssemblyName>Nomation</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -61,9 +61,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LocacaoBiblioteca\LocacaoBiblioteca.csproj">
-      <Project>{965bd472-fac1-4f7c-bb37-95cbe4ab8dbb}</Project>
-      <Name>LocacaoBiblioteca</Name>
+    <ProjectReference Include="..\CatalogoNomes\CatalogoNomes.csproj">
+      <Project>{174e0193-4f87-4e18-86c9-ca8f76f004a7}</Project>
+      <Name>CatalogoNomes</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
