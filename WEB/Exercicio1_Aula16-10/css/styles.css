@@ -1,0 +1,9 @@
+.card {
+    height: 20vh;
+    background-color: #a9a9a9a6;    
+}
+.corpo {
+    height: 100vh;
+    background-image: url('https://aventurasnahistoria.uol.com.br/media/uploads/vangogh_corvos.jpeg');
+    background-size: cover;
+}
