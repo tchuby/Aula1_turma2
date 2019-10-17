@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -14,20 +14,43 @@
             <div class="col-3">
                 <div class="card">
                     <div class="row h-50 align-items-center justify-content-md-center form-group">
-                        <div class="col-9">
-                            <input type="text" class="w-100" id="nome" placeholder="Nome" />
+                        <div class="col-9 align-items-center">
+                            <input type="text" autofocus name="nome" class="w-100 formcontrol form-group" id="nome" placeholder="Nome" />
+                        </div>
+                        <div class="col-9 align-items-center">
+                            <button name="btnboasvindas" data-toggle="modal" data-target="#exampleModalCenter" class="w-100 btn btn-success form-group" id="btnboasvindas" value="Enviar">
+                                Saudar
+                            </button>
                         </div>
                     </div>
-                            <input type="button" id="buttonEnviar" value="Enviar" placeholder="Nome" />
-                        </div>
-                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Seja bem vindo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Seja bem vindo <span name="usuariotext"></span> a cervejaria!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>                    
+                </div>
+            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/scripts.js"></script> 
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
