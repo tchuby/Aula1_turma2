@@ -11,7 +11,8 @@ namespace RegistraImoveis.Models
         [Key]
         public int Id { get; set; }
         public string Nome { get; set; }
-        public DateTime Natal { get; set; }
+        [CustomValidator]
+        public DateTime Natal { get; set; } = DateTime.MinValue;
         public string Email { get; set; }
     }
 }

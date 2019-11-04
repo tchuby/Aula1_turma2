@@ -33,7 +33,7 @@
                 Numero = 89,
                 Complemento = "Apto 406",
                 TitularId = titularId
-            });
+            }); 
             context.SaveChanges();
         }
     }
